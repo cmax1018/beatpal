@@ -20,6 +20,7 @@ class Pad extends React.Component {
   }
 
   play() {
+    console.log('playing buffer duration', this.player.buffer.duration)
     if (this.state.playing) {
       this.player.restart()
     } else {
@@ -29,7 +30,7 @@ class Pad extends React.Component {
 
   render() {
     return (
-      <div className={this.state.playing ? 'pad selected' : 'pad'}>
+      <div className={this.props.selected ? 'pad selected' : 'pad'}>
         {this.props.keyCode}
       </div>
     )

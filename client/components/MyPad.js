@@ -44,6 +44,7 @@ class MyPad extends React.Component {
   }
 
   render() {
+    console.log('this.state', this.state)
     return (
       <div
         onKeyDown={this.handleDown}
@@ -57,17 +58,20 @@ class MyPad extends React.Component {
             url="assets/kick.mp3"
             keyCode="a"
             keysPressed={this.state.keysPressed}
+            selected={this.state.keysPressed.includes('a')}
           />
           <Pad
             url="assets/snare.mp3"
             keyCode="s"
             keysPressed={this.state.keysPressed}
             className="pad"
+            selected={this.state.keysPressed.includes('s')}
           />
           <Pad
             url="assets/crash.mp3"
             keyCode="d"
             keysPressed={this.state.keysPressed}
+            selected={this.state.keysPressed.includes('d')}
           />
         </div>
       </div>
