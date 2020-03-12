@@ -16,7 +16,13 @@ class Pad extends React.Component {
   render() {
     return (
       <div onKeyDown={this.handleDown}>
-        <h2 color="red">PAD</h2>
+        <h2
+          className={
+            this.props.keyCode === this.props.keyPressed ? 'selected' : ''
+          }
+        >
+          PAD
+        </h2>
       </div>
     )
   }

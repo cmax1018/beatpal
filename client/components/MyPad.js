@@ -20,7 +20,6 @@ class MyPad extends React.Component {
     })
   }
   render() {
-    console.log('this.state.keyPressed', this.state.keyPressed)
     return (
       <div onKeyDown={this.handleDown} tabIndex="0">
         <h1>mypad</h1>
