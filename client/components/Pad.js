@@ -2,23 +2,21 @@ import React from 'react'
 import * as Tone from 'tone'
 
 class Pad extends React.Component {
-  constructor(props) {
-    super(props)
-    this.player = new Tone.Player(props.url).toMaster()
-    this.handleDown = this.handleDown.bind(this)
+  async componentDidMount() {
+    this.player = await new Tone.Player(this.props.url).toMaster()
+    this.loaded = true
+    console.log('sampled loaded')
   }
-  handleDown(e) {
-    console.log('down press registered')
-    if (e.key === this.props.keyCode) {
-      console.log('key pressed')
-      this.player.start(null, null, 1)
+  async componentDidUpdate() {
+    if (this.loaded && this.props.keyCode === this.props.keyPressed) {
+      await this.player.start(null, null, 1)
     }
   }
-  handleUp(e) {}
+
   render() {
     return (
-      <div onKeyDown={this.handleDown} tabIndex="-1">
-        <h2>click me </h2>
+      <div onKeyDown={this.handleDown}>
+        <h2 color="red">PAD</h2>
       </div>
     )
   }

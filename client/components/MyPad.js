@@ -25,11 +25,15 @@ class MyPad extends React.Component {
       <div onKeyDown={this.handleDown} tabIndex="0">
         <h1>mypad</h1>
         <Pad
-          url="assets/sample.mp3"
+          url="assets/snare.mp3"
           keyCode="s"
           keyPressed={this.state.keyPressed}
         />
-        <Pad url="assets/sample.mp3" keyCode="a" />
+        <Pad
+          url="assets/kick.mp3"
+          keyCode="a"
+          keyPressed={this.state.keyPressed}
+        />
       </div>
     )
   }
