@@ -20,6 +20,23 @@ form div {
   display: inline-block;
 }
 
+.pad {
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 150px;
+  width: 150px;
+  align-items: center;
+  justify-content: center;
+}
 .selected {
-  color: red;
+  background-color: red;
+}
+.padContainer {
+  display: flex;
+  flex-direction: rows;
+  justify-content: space-around;
+}
+.focus-window {
+  outline: none;
 }
