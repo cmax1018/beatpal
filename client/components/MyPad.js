@@ -5,7 +5,8 @@ class MyPad extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      keysPressed: []
+      keysPressed: [],
+      latestKey: ''
     }
   }
   async componentDidMount() {
@@ -21,12 +22,10 @@ class MyPad extends React.Component {
     const keyPressed = e.key
     if (!this.state.keysPressed.includes(keyPressed)) {
       await this.setState(state => {
-        const keysPressed = [
-          ...state.keysPressed.filter(key => !state.keysPressed.includes(key)),
-          keyPressed
-        ]
+        const keysPressed = [...state.keysPressed, keyPressed]
         return {
-          keysPressed
+          keysPressed,
+          latestKey: keyPressed
         }
       })
     }
@@ -59,6 +58,7 @@ class MyPad extends React.Component {
             keyCode="a"
             keysPressed={this.state.keysPressed}
             selected={this.state.keysPressed.includes('a')}
+            latestKey={this.state.latestKey}
           />
           <Pad
             url="assets/snare.mp3"
@@ -66,12 +66,14 @@ class MyPad extends React.Component {
             keysPressed={this.state.keysPressed}
             className="pad"
             selected={this.state.keysPressed.includes('s')}
+            latestKey={this.state.latestKey}
           />
           <Pad
             url="assets/crash.mp3"
             keyCode="d"
             keysPressed={this.state.keysPressed}
             selected={this.state.keysPressed.includes('d')}
+            latestKey={this.state.latestKey}
           />
         </div>
       </div>
