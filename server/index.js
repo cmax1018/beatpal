@@ -2,8 +2,6 @@ const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const compression = require('compression')
-const session = require('express-session')
-const passport = require('passport')
 // const SequelizeStore = require('connect-session-sequelize')(session.Store)
 // const db = require('./db')
 // const sessionStore = new SequelizeStore({db})
@@ -43,7 +41,6 @@ const createApp = () => {
   // session middleware with passport
   // static file-serving middleware
   app.use(express.static(path.join(__dirname, '..', 'public')))
-
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {
     if (path.extname(req.path).length) {
