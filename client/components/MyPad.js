@@ -2,6 +2,7 @@ import React from 'react'
 import * as Tone from 'tone'
 import {PadList, Metronome} from './index'
 import padConfig from '../padDefaultConfig'
+import newConfig from '../newConfig'
 
 //Meant to handle all app wide logic.
 class MyPad extends React.Component {
@@ -11,7 +12,7 @@ class MyPad extends React.Component {
       keysPressed: [],
       latestKey: '',
       editing: false,
-      config: padConfig
+      config: newConfig
     }
   }
   async componentDidMount() {
@@ -77,9 +78,9 @@ class MyPad extends React.Component {
         className="focus-window"
       >
         <div className="padContainer">
-          <h1>mypad</h1>
+          <h1>Beat Pal</h1>
+          <img src="assets/logo.png" />
           <div className="buttons">
-            {' '}
             <button type="button" onClick={this.handleEdit}>
               {this.state.editing ? 'cancel' : 'keys'}
             </button>

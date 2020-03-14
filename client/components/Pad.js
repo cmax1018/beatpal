@@ -9,14 +9,13 @@ class Pad extends React.Component {
     this.play = this.play.bind(this)
     this.length = props.keysPressed.length
     this.state = {
-      keyCode: props.keyCode,
-      editing: false
+      keyCode: props.keyCode
     }
     this.handleChange = this.handleChange.bind(this)
   }
   async componentDidMount() {
     this.player = await new Tone.Player(
-      'assets/' + this.props.url + '.mp3'
+      'assets/' + this.props.url + '.wav'
     ).toMaster()
   }
   componentDidUpdate() {
@@ -50,6 +49,7 @@ class Pad extends React.Component {
       >
         {this.props.editing ? (
           <EditPad
+            className={this.props.selected ? 'pad selected' : 'pad'}
             keyCode={this.state.keyCode}
             handleChange={this.handleChange}
             handleSubmit={this.props.handleSubmit}
@@ -59,7 +59,7 @@ class Pad extends React.Component {
           this.props.keyCode
         )}
         <br />
-        {this.props.url}
+        {this.props.editing ? '' : this.props.url}
       </div>
     )
   }

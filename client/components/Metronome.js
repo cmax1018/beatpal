@@ -42,20 +42,18 @@ class Metronome extends React.Component {
   }
   render() {
     return (
-      <div>
-        <button
-          className="start-button"
-          type="button"
-          onClick={this.handleClick}
-        >
-          {this.state.playing ? 'stop' : 'start'}
-        </button>
-        Bpm:{' '}
+      <div className="metronome">
+        <img id="metronome-icon" src="assets/metronome.png" alt="metronome" />
         <input
           name="bpm"
           value={this.state.bpm}
           type="number"
           onChange={this.handleChange}
+        />
+        <button
+          className={this.state.playing ? 'stop' : 'start'}
+          type="button"
+          onClick={this.handleClick}
         />
       </div>
     )
