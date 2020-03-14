@@ -78,11 +78,13 @@ class MyPad extends React.Component {
         className="focus-window"
       >
         <div className="padContainer">
-          <h1>Beat Pal</h1>
-          <img src="assets/logo.png" />
+          <h1 id="title">Beat Pal</h1>
+          <div className="logo-container">
+            <img src="assets/logo.png" id="logo" alt="beatpal" />
+          </div>
           <div className="buttons">
-            <button type="button" onClick={this.handleEdit}>
-              {this.state.editing ? 'cancel' : 'keys'}
+            <button type="button" onClick={this.handleEdit} className="keys">
+              {this.state.editing ? 'cancel' : 'change keys'}
             </button>
             <Metronome />
           </div>

@@ -1,8 +1,11 @@
 body {
   display: flex;
-  font-family: sans-serif;
-  background-color: #0f0e0e;
+  font-family: 'Sen', sans-serif;
+  background: rgb(240, 215, 151);
   height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
@@ -37,6 +40,7 @@ form div {
   align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 2px;
 }
 
 .selected {
@@ -44,7 +48,6 @@ form div {
   font-size: 85%;
 }
 .padContainer {
-  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,9 +59,7 @@ form div {
 }
 .buttons {
   display: flex;
-  background-color: gray;
-  border: 1px solid white;
-  border-radius: 2px;
+  margin-bottom: 10px;
   width: 48%;
   flex-direction: row;
   justify-content: space-between;
@@ -66,19 +67,18 @@ form div {
 }
 .done {
   background-color: green;
-  height: 10px;
 }
 .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .pads {
   display: flex;
   flex-direction: rows;
   justify-content: center;
   flex-wrap: wrap;
-  border: 5px solid white;
 }
 .focus-window {
   outline: none;
@@ -88,13 +88,16 @@ input {
   width: 50px;
 }
 button {
-  background-color: DodgerBlue; /* Blue background */
+  /* Blue background */
+  background-color: hsl(0, 0%, 0%);
   border: none; /* Remove borders */
   color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
+  padding: 6px 8px; /* Some padding */
   font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
   outline: none;
+  border-radius: 2px;
+  height: 40px;
 }
 .start {
   border-radius: 5px;
@@ -103,6 +106,11 @@ button {
 .stop {
   border-radius: 5px;
   background-color: red;
+}
+.start,
+.stop {
+  width: 40px;
+  margin-left: 1px;
 }
 button:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
@@ -117,8 +125,33 @@ button:hover {
   max-height: 30px;
 }
 h1 {
-  color: white;
+  color: black;
+  font-size: 40px;
 }
 .metronome input {
-  width: 30px;
+  width: 35px;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.keys {
+  border-radius: 4px;
+  border: 1 solid black;
+}
+.editpad {
+  display: flex;
+  justify-content: space-around;
+}
+.editpad input {
+  width: 40px;
+}
+.logo-selected {
+  transform: rotate(45deg); /* Equal to rotateZ(45deg) */
+  background-color: pink;
+}
+.logo-container {
+  max-height: 200px;
+  max-width: 200px;
 }

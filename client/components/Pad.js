@@ -59,7 +59,7 @@ class Pad extends React.Component {
           this.props.keyCode
         )}
         <br />
-        {this.props.editing ? '' : this.props.url}
+        {this.props.editing ? this.props.url : ''}
       </div>
     )
   }

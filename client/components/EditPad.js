@@ -2,7 +2,7 @@ import React from 'react'
 
 const EditPad = props => {
   return (
-    <div>
+    <div className="editpad">
       <input onChange={props.handleChange} value={props.keyCode} />
       <button
         className="done"
