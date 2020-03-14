@@ -1,12 +1,17 @@
 import React from 'react'
 import * as Tone from 'tone'
-import {Pad} from './index'
+import {PadList, Metronome} from './index'
+import padConfig from '../padDefaultConfig'
+
+//Meant to handle all app wide logic.
 class MyPad extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       keysPressed: [],
-      latestKey: ''
+      latestKey: '',
+      editing: false,
+      config: padConfig
     }
   }
   async componentDidMount() {
@@ -17,6 +22,7 @@ class MyPad extends React.Component {
 
     this.handleDown = this.handleDown.bind(this)
     this.handleUp = this.handleUp.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleDown = async e => {
     const keyPressed = e.key
@@ -41,39 +47,50 @@ class MyPad extends React.Component {
       })
     }
   }
-
+  handleEdit = async () => {
+    await this.setState(state => ({editing: !state.editing}))
+  }
+  handleSubmit = async (id, data) => {
+    console.log('fired')
+    console.log(data)
+    console.log(id)
+    await this.setState(state => {
+      return {
+        config: state.config.map(pad => {
+          if (id === pad.id) {
+            return {...pad, keyCode: data}
+          } else {
+            return pad
+          }
+        }),
+        editing: false
+      }
+    })
+  }
   render() {
-    console.log('this.state', this.state)
     return (
       <div
+        id="main"
         onKeyDown={this.handleDown}
         onKeyUp={this.handleUp}
         tabIndex="0"
         className="focus-window"
       >
-        <h1>mypad</h1>
         <div className="padContainer">
-          <Pad
-            url="assets/kick.mp3"
-            keyCode="a"
+          <h1>mypad</h1>
+          <div className="buttons">
+            {' '}
+            <button type="button" onClick={this.handleEdit}>
+              {this.state.editing ? 'cancel' : 'edit pads'}
+            </button>
+            <Metronome />
+          </div>
+          <PadList
+            config={this.state.config}
             keysPressed={this.state.keysPressed}
-            selected={this.state.keysPressed.includes('a')}
             latestKey={this.state.latestKey}
-          />
-          <Pad
-            url="assets/snare.mp3"
-            keyCode="s"
-            keysPressed={this.state.keysPressed}
-            className="pad"
-            selected={this.state.keysPressed.includes('s')}
-            latestKey={this.state.latestKey}
-          />
-          <Pad
-            url="assets/crash.mp3"
-            keyCode="d"
-            keysPressed={this.state.keysPressed}
-            selected={this.state.keysPressed.includes('d')}
-            latestKey={this.state.latestKey}
+            editing={this.state.editing}
+            handleSubmit={this.handleSubmit}
           />
         </div>
       </div>

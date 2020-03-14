@@ -1,15 +1,9 @@
 import React from 'react'
 
-import {Navbar} from './components'
-import Routes from './routes'
+import {MyPad} from './components'
 
 const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <Routes />
-    </div>
-  )
+  return <MyPad />
 }
 
 export default App

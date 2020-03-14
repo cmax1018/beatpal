@@ -1,18 +1,25 @@
 import React from 'react'
 import * as Tone from 'tone'
+import {EditPad} from './index'
 
+//meant to handle pad specific logic
 class Pad extends React.Component {
   constructor(props) {
     super(props)
     this.play = this.play.bind(this)
     this.length = props.keysPressed.length
+    this.state = {
+      keyCode: props.keyCode,
+      editing: false
+    }
+    this.handleChange = this.handleChange.bind(this)
   }
   async componentDidMount() {
-    this.player = await new Tone.Player(this.props.url).toMaster()
-    console.log(this.player.buffer)
+    this.player = await new Tone.Player(
+      'assets/' + this.props.url + '.mp3'
+    ).toMaster()
   }
   componentDidUpdate() {
-    console.log(this.length, this.props.keysPressed.length)
     if (
       this.props.latestKey === this.props.keyCode &&
       this.props.keysPressed.includes(this.props.keyCode) &&
@@ -24,13 +31,33 @@ class Pad extends React.Component {
   }
 
   play() {
-    this.player.restart()
+    if (!this.props.editing) {
+      this.player.start()
+    }
   }
-
+  async handleChange(e) {
+    if (e.target.value.length <= 1) {
+      await this.setState({
+        keyCode: e.target.value
+      })
+    }
+  }
   render() {
     return (
-      <div className={this.props.selected ? 'pad selected' : 'pad'}>
-        {this.props.keyCode}
+      <div
+        className={this.props.selected ? 'pad selected' : 'pad'}
+        onClick={this.play}
+      >
+        {this.props.editing ? (
+          <EditPad
+            keyCode={this.state.keyCode}
+            handleChange={this.handleChange}
+            handleSubmit={this.props.handleSubmit}
+            id={this.props.id}
+          />
+        ) : (
+          this.props.keyCode
+        )}
         <br />
         {this.props.url}
       </div>
