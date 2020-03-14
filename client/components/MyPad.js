@@ -81,7 +81,7 @@ class MyPad extends React.Component {
           <div className="buttons">
             {' '}
             <button type="button" onClick={this.handleEdit}>
-              {this.state.editing ? 'cancel' : 'edit pads'}
+              {this.state.editing ? 'cancel' : 'keys'}
             </button>
             <Metronome />
           </div>

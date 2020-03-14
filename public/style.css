@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  background-color: grey;
 }
 
 a {
@@ -19,8 +20,12 @@ form div {
   margin: 1em;
   display: inline-block;
 }
-
 .pad {
+  border-width: 10px;
+  margin: 1px;
+  border-style: solid;
+  border-color: grey;
+  outline: 1px solid white;
   background-color: black;
   color: white;
   display: flex;
@@ -28,15 +33,56 @@ form div {
   width: 150px;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
+
 .selected {
-  background-color: red;
+  outline-color: red;
+  border-color: red;
+  font-size: 85%;
 }
 .padContainer {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.buttons {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.done {
+  background-color: green;
+  height: 10px;
+}
+.pads {
   display: flex;
   flex-direction: rows;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .focus-window {
   outline: none;
+}
+input {
+  outline: none;
+  width: 50px;
+}
+
+button {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+.start-button {
+  background-color: aquamarine;
+}
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

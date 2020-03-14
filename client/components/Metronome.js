@@ -32,6 +32,8 @@ class Metronome extends React.Component {
     await this.setState({
       bpm: e.target.value
     })
+
+    //this helps the ramp up by stopping the bpm first if playing.
     this.loop.stop()
     Tone.Transport.bpm.rampTo(this.state.bpm, 1)
     if (this.state.playing) {
@@ -41,7 +43,11 @@ class Metronome extends React.Component {
   render() {
     return (
       <div>
-        <button type="button" onClick={this.handleClick}>
+        <button
+          className="start-button"
+          type="button"
+          onClick={this.handleClick}
+        >
           {this.state.playing ? 'stop' : 'start'}
         </button>
         Bpm:{' '}

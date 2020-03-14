@@ -2,41 +2,81 @@ export default [
   {
     id: 0,
     url: 'kick',
-    keyCode: 'a'
+    keyCode: '1'
   },
   {
     id: 1,
     url: 'snare',
-    keyCode: 's'
+    keyCode: '2'
   },
   {
     id: 2,
     url: 'hihat',
-    keyCode: 't'
+    keyCode: '3'
   },
   {
     id: 3,
     url: 'crash',
-    keyCode: 'd'
+    keyCode: '4'
   },
   {
     id: 4,
     url: 'kick',
-    keyCode: ' '
+    keyCode: 'q'
   },
   {
     id: 5,
     url: 'snare',
-    keyCode: 'p'
+    keyCode: 'w'
   },
   {
     id: 6,
     url: 'hihat',
-    keyCode: 'z'
+    keyCode: 'e'
   },
   {
     id: 7,
     url: 'crash',
-    keyCode: 'q'
+    keyCode: 'r'
+  },
+  {
+    id: 8,
+    url: 'kick',
+    keyCode: 'a'
+  },
+  {
+    id: 9,
+    url: 'snare',
+    keyCode: 's'
+  },
+  {
+    id: 10,
+    url: 'hihat',
+    keyCode: 'd'
+  },
+  {
+    id: 11,
+    url: 'crash',
+    keyCode: 'f'
+  },
+  {
+    id: 12,
+    url: 'kick',
+    keyCode: 'z'
+  },
+  {
+    id: 13,
+    url: 'snare',
+    keyCode: 'x'
+  },
+  {
+    id: 14,
+    url: 'hihat',
+    keyCode: 'c'
+  },
+  {
+    id: 15,
+    url: 'crash',
+    keyCode: 'v'
   }
 ]
