@@ -45,17 +45,6 @@ Here is a list of features I have in mind for the near future:
 * Swap between configurations
 * Create custom configs
 
-### Known Bugs
-
-List of of known issues I plan to resolve:
-
-* Metronome sometimes will ring indefinitely, needing a page refresh to resolve
-* Incrementing the bpm of the metronome while playing is inconsistent
-* All done buttons in edit screen close all others. I plan to either make each
-  pad customizable independently, or will just add one central done button to
-  fix this
-* Sometimes, the first sound played is significantly delayed
-
 ## The Journey and What I Learned
 
 Making Beat Pal was incredibly rewarding. There is something I love about being
@@ -84,3 +73,14 @@ I learned so much from this project, and I really think ultimately, this was an
 exercise in state, UI/UX, and frontend logic. I've always felt more comfortable
 on the backend, so exploring this space was incredibly enlightening. I'm excited
 to see how Beat Pal can grow from here, and as always, please try to break it!
+
+## Known Bugs
+
+List of of known issues I plan to resolve:
+
+* Metronome sometimes will ring indefinitely, needing a page refresh to resolve
+* Incrementing the bpm of the metronome while playing is inconsistent
+* All done buttons in edit screen close all others. I plan to either make each
+  pad customizable independently, or will just add one central done button to
+  fix this
+* Sometimes, the first sound played is significantly delayed
