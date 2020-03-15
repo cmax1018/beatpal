@@ -1,5 +1,6 @@
 # Beat Pal
 ![logo](public/assets/logo.png)
+
 _Programmable Drum Machine_
 
 [Beat Pal][deployed-link] is a small application meant to aid musicians looking to make drum
