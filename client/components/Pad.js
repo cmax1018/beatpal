@@ -42,24 +42,22 @@ class Pad extends React.Component {
     }
   }
   render() {
+    const {selected, keyCode, editing, url, handleSubmit, id} = this.props
     return (
-      <div
-        className={this.props.selected ? 'pad selected' : 'pad'}
-        onClick={this.play}
-      >
+      <div className={selected ? 'pad selected' : 'pad'} onClick={this.play}>
         {this.props.editing ? (
           <EditPad
-            className={this.props.selected ? 'pad selected' : 'pad'}
+            className={selected ? 'pad selected' : 'pad'}
             keyCode={this.state.keyCode}
             handleChange={this.handleChange}
-            handleSubmit={this.props.handleSubmit}
-            id={this.props.id}
+            handleSubmit={handleSubmit}
+            id={id}
           />
         ) : (
-          this.props.keyCode
+          keyCode
         )}
         <br />
-        {this.props.editing ? this.props.url : ''}
+        {editing ? url : ''}
       </div>
     )
   }
