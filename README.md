@@ -1,5 +1,5 @@
-# Beat Pal
-![logo](public/assets/logo.png)
+
+# Beat Pal ![logo](public/assets/logo.png)
 
 _Programmable Drum Machine_
 
