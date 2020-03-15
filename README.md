@@ -3,7 +3,7 @@
 _Programmable Drum Machine_
 
 [Beat Pal][deployed-link] is a small application meant to aid musicians looking to make drum
-beats for their laptop keyboard!
+beats from their laptop keyboard!
 
 It was constructed for the Fullstack Academy's "Stack-a-thon" where we were
 tasked to create a project start-to-finish, in about 4 days.
