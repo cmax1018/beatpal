@@ -27,8 +27,8 @@ client and public folder, respectively.
 
 1.  fork the repo
 2.  `npm install`
-    3 `npm run start` for production, or `npm run start-dev` for dev mode.
-3.  Jam out!
+3.  `npm run start` for production, or `npm run start-dev` for dev mode.
+4.  Jam out!
 
 ## Future Plans
 
