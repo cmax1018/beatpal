@@ -1,6 +1,11 @@
 {
   "root": true,
   "extends": ["fullstack", "prettier", "prettier/react"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "semi": 0
   }

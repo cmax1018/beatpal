@@ -23,7 +23,6 @@ module.exports = app
  * keys as environment variables, so that they can still be read by the
  * Node process on process.env
  */
-if (process.env.NODE_ENV !== 'production') require('../secrets')
 
 // passport registration
 
@@ -41,6 +40,7 @@ const createApp = () => {
   // session middleware with passport
   // static file-serving middleware
   app.use(express.static(path.join(__dirname, '..', 'public')))
+
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {
     if (path.extname(req.path).length) {
@@ -67,9 +67,9 @@ const createApp = () => {
 
 const startListening = () => {
   // start listening (and create a 'server' object representing our server)
-  const server = app.listen(PORT, () =>
-    console.log(`Mixing it up on port ${PORT}`)
-  )
+  app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`))
+
+  // set up our socket control center
 }
 
 async function bootApp() {

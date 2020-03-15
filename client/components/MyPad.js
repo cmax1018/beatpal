@@ -1,7 +1,6 @@
 import React from 'react'
 import * as Tone from 'tone'
 import {PadList, Metronome} from './index'
-import padConfig from '../padDefaultConfig'
 import newConfig from '../newConfig'
 
 //Meant to handle all app wide logic.
