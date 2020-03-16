@@ -1,4 +1,4 @@
-# Beat Pal
+# Beat Pal ![logo](public/assets/logo.png)
 
 _Programmable Drum Machine_
 
@@ -21,7 +21,7 @@ interesting features better handled by Tone JS's arsenal of tools.
 
 ## Setup
 
-If you'd like to clone this down and play with the code you self, it's fairly
+If you'd like to clone this down and play with the code yourself, it's fairly
 straight forward. I've even included a few default configs and assets in the
 client and public folder, respectively.
 
