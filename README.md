@@ -67,9 +67,7 @@ order to accomplish both of these things in tandem, I kept track of the latest
 key pressed, and also seeing if the array of 'keys pressed' had just gotten
 bigger or smaller(Important context here is that the function to play the sound
 exists in the "Pad" React component's `componentDidUpdate` method), and
-would play the song accordingly. I'm sure there's a cleaner solution, but I was
-gunning for more features, so I got past it and haven't had much change to look
-back.
+would play the song accordingly.
 
 I learned so much from this project, and I really think ultimately, this was an
 exercise in state, UI/UX, and frontend logic. I've always felt more comfortable
