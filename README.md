@@ -19,7 +19,7 @@ interesting features better handled by Tone JS's arsenal of tools.
 [tone-doc]: https://tonejs.github.io/
 [deployed-link]: https://beatpal.herokuapp.com/
 
-![example](Screen Shot 2020-03-16 at 12.26.17 PM.png)
+![example](public/assets/example.png)
 
 ## Setup
 

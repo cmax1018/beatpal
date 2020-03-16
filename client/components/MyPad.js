@@ -15,7 +15,6 @@ class MyPad extends React.Component {
     }
   }
   async componentDidMount() {
-    console.log('starting Tone...')
     await Tone.start()
     await Tone.Transport.start()
     Tone.context.lookAhead = 0
@@ -51,9 +50,6 @@ class MyPad extends React.Component {
     await this.setState(state => ({editing: !state.editing}))
   }
   handleSubmit = async (id, data) => {
-    console.log('fired')
-    console.log(data)
-    console.log(id)
     await this.setState(state => {
       return {
         config: state.config.map(pad => {
