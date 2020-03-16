@@ -13,7 +13,6 @@ class Metronome extends React.Component {
   }
   async componentDidMount() {
     this.loop = await new Tone.Loop(function(time) {
-      console.log(time)
       new Tone.Synth().toMaster().triggerAttackRelease('C4', '16n')
     }, '4n')
     Tone.Transport.start()
